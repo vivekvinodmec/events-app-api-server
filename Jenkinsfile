@@ -66,12 +66,12 @@ pipeline {
                         }
                     }
             steps {
-                echo "submit gcr.io/roidtc-a2022-u313/api-server-image :v2.${env.BUILD_ID}"
-                sh "gcloud builds submit -t gcr.io/roidtc-a2022-u313/api-server-image :v2.${env.BUILD_ID} ."
+                echo "submit gcr.io/roidtc-a2022-u313/api-server-image:v2.${env.BUILD_ID}"
+                sh "gcloud builds submit -t gcr.io/roidtc-a2022-u313/api-server-image:v2.${env.BUILD_ID} ."
                 echo 'Get cluster credentials'
                 sh 'gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project roidtc-a2022-u313'
-                echo "Update the image to use gcr.io/roidtc-a2022-u313/api-server-image :v2.${env.BUILD_ID}"
-                sh "kubectl set image deployment/demo-api demo-api=gcr.io/roidtc-a2022-u313/api-server-image :v2.${env.BUILD_ID}"
+                echo "Update the image to use gcr.io/roidtc-a2022-u313/api-server-image:v2.${env.BUILD_ID}"
+                sh "kubectl set image deployment/demo-api demo-api=gcr.io/roidtc-a2022-u313/api-server-image:v2.${env.BUILD_ID}"
             }
         }            
     }
