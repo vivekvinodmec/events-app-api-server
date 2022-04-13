@@ -5,6 +5,6 @@
  */
 class AppConfig {
     version = '1.0.1';
-    team = 'GCP App';
+    team = 'Your Team Name';
 }
 module.exports = AppConfig;
